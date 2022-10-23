@@ -5,5 +5,7 @@ public class Main {
 		SwitchCase.grade(40, 60);
 		double[] mylist = { 1.2, 6.3, 4.3, 5.6 };
 		ReCapDemo2.maxListNumber(mylist);
+		System.out.println(PrimeNumber.isItPrime(10));
+		BassOrThinVoices.bassOrThin('t');
 	}
 }
