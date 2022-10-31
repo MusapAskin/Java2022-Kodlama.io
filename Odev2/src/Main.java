@@ -7,5 +7,6 @@ public class Main {
 		ReCapDemo2.maxListNumber(mylist);
 		System.out.println(PrimeNumber.isItPrime(10));
 		BassOrThinVoices.bassOrThin('t');
+		PerfectNumbers.perfectNumber(6);
 	}
 }
