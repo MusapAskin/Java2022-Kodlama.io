@@ -1,7 +1,13 @@
 package AbstractDemo;
 
 public class CustomerManager {
-	public void getCustomer(BaseDatabaseManager baseDatabaseManager) {
+	private BaseDatabaseManager baseDatabaseManager;
+
+	public CustomerManager(BaseDatabaseManager baseDatabaseManager) {
+		this.baseDatabaseManager = baseDatabaseManager;
+	}
+
+	public void getCustomer() {
 		baseDatabaseManager.getData();
 	}
 }
