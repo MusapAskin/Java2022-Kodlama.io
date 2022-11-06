@@ -1,0 +1,6 @@
+package AbstractDemo;
+
+public class CustomerManager {
+	private BaseDatabaseManager baseDatabaseManager;
+
+}

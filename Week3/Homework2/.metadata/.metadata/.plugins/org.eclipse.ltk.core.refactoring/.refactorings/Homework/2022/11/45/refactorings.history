@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;AbstractDemo.BaseDataManager&apos; to &apos;BaseDatabaseManager&apos;&#x0D;&#x0A;- Original project: &apos;Homework&apos;&#x0D;&#x0A;- Original element: &apos;AbstractDemo.BaseDataManager&apos;&#x0D;&#x0A;- Renamed element: &apos;AbstractDemo.BaseDatabaseManager&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;BaseDataManager&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;AbstractDemo{BaseDataManager.java[BaseDataManager" matchStrategy="1" name="BaseDatabaseManager" qualified="false" references="true" similarDeclarations="false" stamp="1667686237887" textual="false" version="1.0"/>
+</session>
