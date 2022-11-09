@@ -21,6 +21,7 @@ public class CategoryManager {
 	public void add(Category category) throws Exception {
 		try {
 			isCategoryExist(category.getName());
+			categories.add(category);
 			categoryDao.add(category);
 			log(category);
 		} catch (Exception e) {

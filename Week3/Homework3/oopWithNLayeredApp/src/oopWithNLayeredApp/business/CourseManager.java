@@ -22,6 +22,7 @@ public class CourseManager {
 		try {
 			isCourseExist(course.getName());
 			isPriceValid(course.getPrice());
+			courses.add(course);
 			courseDao.add(course);
 			log(course);
 		} catch (Exception e) {
@@ -46,7 +47,7 @@ public class CourseManager {
 	}
 
 	private void isPriceValid(double coursePrice) throws Exception {
-		if (coursePrice < 0.0) {
+		if (coursePrice < 0) {
 			throw new Exception("Course price can not be less the zero.");
 		}
 	}

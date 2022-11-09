@@ -24,7 +24,7 @@ public class Main {
 		loggers.add(new FileLogger());
 		loggers.add(new DatabaseLogger());
 
-		Course course1 = new Course(1, "Java", 100);
+		Course course1 = new Course(1, "Java", -1);
 		Course course2 = new Course(1, "Java", 100);
 
 		CourseManager courseManager = new CourseManager(new JdbcDao(), courses, loggers);
