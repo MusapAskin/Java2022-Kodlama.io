@@ -8,10 +8,10 @@ import oopWithNLayeredApp.entity.Course;
 
 public class CourseManager {
 	private CourseDao courseDao;
-	private Course[] courses;
+	private List<Course> courses;
 	private List<Logger> loggers;
 
-	public CourseManager(CourseDao courseDao, Course[] courses, List<Logger> loggers) {
+	public CourseManager(CourseDao courseDao, List<Course> courses, List<Logger> loggers) {
 		super();
 		this.courseDao = courseDao;
 		this.courses = courses;
@@ -20,11 +20,6 @@ public class CourseManager {
 
 	public void add(Course course) throws Exception {
 		try {
-			/*
-			 * Burada hata her türlü yakalanacaktır.Çünkü veri doğrulaması databaseden değil
-			 * diziden yapılmaktadır. Dolayısıyla dizi ilk başta tanımlandığından
-			 * kontrol ettiğimiz eleman zaten dizide var.
-			 */
 			isCourseExist(course.getName());
 			isPriceValid(course.getPrice());
 			courseDao.add(course);

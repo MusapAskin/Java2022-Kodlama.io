@@ -19,6 +19,7 @@ public class EducatorManager {
 		educatorDao.add(educator);
 		log(educator);
 	}
+
 	private void log(Educator educator) {
 		for (Logger logger : loggers) {
 			logger.log(educator.getName() + educator.getLastName());

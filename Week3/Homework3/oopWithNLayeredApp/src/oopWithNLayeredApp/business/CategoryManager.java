@@ -8,10 +8,10 @@ import oopWithNLayeredApp.entity.Category;
 
 public class CategoryManager {
 	private CategoryDao categoryDao;
-	private Category[] categories;
+	private List<Category> categories;
 	private List<Logger> loggers;
 
-	public CategoryManager(CategoryDao categoryDao, Category[] categories, List<Logger> loggers) {
+	public CategoryManager(CategoryDao categoryDao, List<Category> categories, List<Logger> loggers) {
 		super();
 		this.categoryDao = categoryDao;
 		this.categories = categories;
@@ -20,11 +20,6 @@ public class CategoryManager {
 
 	public void add(Category category) throws Exception {
 		try {
-			/*
-			 * Burada hata her türlü yakalanacaktır.Çünkü veri doğrulaması databaseden değil
-			 * diziden yapılmaktadır. Dolayısıyla dizi ilk başta tanımlandığından
-			 * eklediğimiz eleman zaten dizide var.
-			 */
 			isCategoryExist(category.getName());
 			categoryDao.add(category);
 			log(category);
