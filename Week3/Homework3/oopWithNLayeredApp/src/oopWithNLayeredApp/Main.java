@@ -16,7 +16,6 @@ import oopWithNLayeredApp.entity.Course;
 import oopWithNLayeredApp.entity.Educator;
 
 public class Main {
-
 	public static void main(String[] args) throws Exception {
 		List<Category> categories = new ArrayList<>();
 		List<Course> courses = new ArrayList<>();
@@ -24,14 +23,14 @@ public class Main {
 		loggers.add(new FileLogger());
 		loggers.add(new DatabaseLogger());
 
-		Course course1 = new Course(1, "Java", -1);
-		Course course2 = new Course(1, "Java", 100);
+		Course course1 = new Course(1, "Java", 100);
+		Course course2 = new Course(2, "C#", 200);
 
 		CourseManager courseManager = new CourseManager(new JdbcDao(), courses, loggers);
 		courseManager.add(course1);
 		courseManager.add(course2);
 
-		Category category1 = new Category(1, "Programlama");
+		Category category1 = new Category(1, "Programing");
 		Category category2 = new Category(2, "All");
 		CategoryManager categoryManager = new CategoryManager(new HibernateDao(), categories, loggers);
 
