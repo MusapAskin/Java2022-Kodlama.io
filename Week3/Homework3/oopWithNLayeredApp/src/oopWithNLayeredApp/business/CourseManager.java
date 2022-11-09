@@ -48,7 +48,7 @@ public class CourseManager {
 
 	private void isPriceValid(double coursePrice) throws Exception {
 		if (coursePrice < 0) {
-			throw new Exception("Course price can not be less the zero.");
+			throw new Exception("Course price can not be less then zero.");
 		}
 	}
 }
