@@ -1,0 +1,8 @@
+package kodlama.io.rentACar.business;
+
+import java.util.List;
+import kodlama.io.rentACar.entities.concretes.Brands;
+public interface BrandService {
+	List<Brands> getAll();
+
+}

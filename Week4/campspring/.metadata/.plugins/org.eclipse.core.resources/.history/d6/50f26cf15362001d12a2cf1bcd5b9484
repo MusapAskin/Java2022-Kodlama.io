@@ -1,0 +1,33 @@
+package kodlama.io.rentACar.entities.concretes;
+
+public class Brands {
+	private int id;
+	private String brand;
+
+	public Brands() {
+		super();
+	}
+
+	public Brands(int id, String brand) {
+		super();
+		this.id = id;
+		this.brand = brand;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+}

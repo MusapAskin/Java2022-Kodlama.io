@@ -1,0 +1,21 @@
+package kodlama.io.rentACar.dataAccess.concretes;
+
+import java.util.List;
+
+import kodlama.io.rentACar.entities.concretes.Brands;
+
+public class InMemoryBrandRepository implements kodlama.io.rentACar.dataAccess.abstracts.BrandRepository {
+	List<Brands> brands;
+
+	public InMemoryBrandRepository(List<Brands> brands) {
+		super();
+		brands.add(new Brands(1, "Mercedes"));
+		this.brands = brands;
+	}
+
+	@Override
+	public List<Brands> getAll() {
+		return brands;
+	}
+
+}
