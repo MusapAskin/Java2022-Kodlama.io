@@ -2,16 +2,16 @@ package kodlama.io.rentACar.entities.concretes;
 
 public class Brand {
 	private int id;
-	private String brand;
+	private String brandName;
 
 	public Brand() {
 		super();
 	}
 
-	public Brand(int id, String brand) {
+	public Brand(int id, String brandName) {
 		super();
 		this.id = id;
-		this.brand = brand;
+		this.brandName = brandName;
 	}
 
 	public int getId() {
@@ -23,11 +23,11 @@ public class Brand {
 	}
 
 	public String getBrand() {
-		return brand;
+		return brandName;
 	}
 
 	public void setBrand(String brand) {
-		this.brand = brand;
+		this.brandName = brand;
 	}
 
 }

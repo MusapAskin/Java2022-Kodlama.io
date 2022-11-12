@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import kodlama.io.rentACar.business.abstracts.Brandservice;
+import kodlama.io.rentACar.business.abstracts.BrandService;
 import kodlama.io.rentACar.entities.concretes.Brand;
 
 @RestController
 @RequestMapping("/api/brands")
 public class BrandsController {
-	private Brandservice brandservice;
+	private BrandService brandservice;
 
 	@Autowired
-	public BrandsController(Brandservice brandservice) {
+	public BrandsController(BrandService brandservice) {
 		super();
 		this.brandservice = brandservice;
 	}
