@@ -25,27 +25,27 @@ public class LanguagesController {
 		this.languageService = languageService;
 	}
 
-	@GetMapping("/getall")
+	@GetMapping("/")
 	public List<Language> getAll() {
 		return languageService.getAll();
 	}
 
-	@PostMapping("/add")
+	@PostMapping("/")
 	public void add(Language language) throws Exception {
 		languageService.add(language);
 	}
 
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/{id}")
 	public void delete(@PathVariable int id) throws Exception {
 		languageService.delete(id);
 	}
 
-	@PutMapping("/update/{id}")
+	@PutMapping("/{id}")
 	public void update(@PathVariable int id, String name) throws Exception {
 		languageService.update(id, name);
 	}
 
-	@GetMapping("/getbyid/{id}")
+	@GetMapping("/{id}")
 	public Language getById(@PathVariable int id) throws Exception {
 		return languageService.getById(id);
 	}
