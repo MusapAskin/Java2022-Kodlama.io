@@ -52,17 +52,18 @@ public class LanguageManager implements LanguageService {
 	}
 
 	@Override
-	public void delete(CreateLanguageRequest languageRequest) throws Exception {
-		// TODO Auto-generated method stub
-
+	public void delete(int id) throws Exception {
+		isLanguageExist(id);
+		languageRepository.delete(languageRepository.getReferenceById(id));
 	}
 
 	@Override
 	public void update(CreateLanguageRequest languageRequest) throws Exception {
 		try {
 			isLanguageExist(languageRequest.getId());
-			languageRepository.getReferenceById(languageRequest.getId()).setName(languageRequest.getName());
-			;
+			Language language = languageRepository.getReferenceById(languageRequest.getId());
+			language.setName(languageRequest.getName());
+			languageRepository.save(language);
 		} catch (Exception e) {
 			throw e;
 		}
@@ -85,12 +86,15 @@ public class LanguageManager implements LanguageService {
 		}
 	}
 
-	public void isLanguageExist(Integer id) throws Exception {
+	public void isLanguageExist(int id) throws Exception {
 		for (Language language : languageRepository.findAll()) {
-			if (!(language.getId() == id)) {
+			if (language.getId() == id)
+				break;
+			else {
 				throw new Exception("Language is not exist.");
 			}
 		}
+
 	}
 
 	public void isLanguageNameEmpty(String name) throws Exception {

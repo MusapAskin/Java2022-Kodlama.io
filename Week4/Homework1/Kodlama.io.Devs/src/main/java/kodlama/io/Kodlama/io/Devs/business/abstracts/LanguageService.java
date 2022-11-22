@@ -12,7 +12,7 @@ public interface LanguageService {
 
 	void add(CreateLanguageRequest languageRequest) throws Exception;
 
-	void delete(CreateLanguageRequest languageRequest) throws Exception;
+	void delete(int  id) throws Exception;
 
 	void update(CreateLanguageRequest languageRequest) throws Exception;
 
