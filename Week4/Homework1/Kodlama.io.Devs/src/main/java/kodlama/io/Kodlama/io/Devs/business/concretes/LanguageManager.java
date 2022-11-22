@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kodlama.io.Kodlama.io.Devs.business.abstracts.LanguageService;
-import kodlama.io.Kodlama.io.Devs.business.requests.CreateLanguageRequest;
+import kodlama.io.Kodlama.io.Devs.business.requests.CreateLanguagesRequest;
 import kodlama.io.Kodlama.io.Devs.business.responces.GetAllLanguagesResponse;
 import kodlama.io.Kodlama.io.Devs.dataAccess.abstracts.LanguageRepository;
 import kodlama.io.Kodlama.io.Devs.entities.concretes.Language;
@@ -39,7 +39,7 @@ public class LanguageManager implements LanguageService {
 	}
 
 	@Override
-	public void add(CreateLanguageRequest languageRequest) throws Exception {
+	public void add(CreateLanguagesRequest languageRequest) throws Exception {
 		try {
 			Language language = new Language();
 			isLanguageExist(languageRequest.getName());
@@ -58,12 +58,12 @@ public class LanguageManager implements LanguageService {
 	}
 
 	@Override
-	public void update(CreateLanguageRequest languageRequest) throws Exception {
+	public void update(CreateLanguagesRequest languageRequest) throws Exception {
 		try {
 			isLanguageExist(languageRequest.getId());
 			Language language = languageRepository.getReferenceById(languageRequest.getId());
 			language.setName(languageRequest.getName());
-			languageRepository.save(language);
+			this.languageRepository.save(language);
 		} catch (Exception e) {
 			throw e;
 		}

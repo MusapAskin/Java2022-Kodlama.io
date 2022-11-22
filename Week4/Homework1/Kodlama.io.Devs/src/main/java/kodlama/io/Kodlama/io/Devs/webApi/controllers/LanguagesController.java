@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlama.io.Kodlama.io.Devs.business.abstracts.LanguageService;
-import kodlama.io.Kodlama.io.Devs.business.requests.CreateLanguageRequest;
+import kodlama.io.Kodlama.io.Devs.business.requests.CreateLanguagesRequest;
 import kodlama.io.Kodlama.io.Devs.business.responces.GetAllLanguagesResponse;
 import kodlama.io.Kodlama.io.Devs.entities.concretes.Language;
 
@@ -29,26 +29,26 @@ public class LanguagesController {
 
 	@GetMapping("/getall")
 	public List<GetAllLanguagesResponse> getAll() {
-		return languageService.getAll();
+		return this.languageService.getAll();
 	}
 
 	@PostMapping("/add")
-	public void add(CreateLanguageRequest languageRequest) throws Exception {
+	public void add(CreateLanguagesRequest languageRequest) throws Exception {
 		this.languageService.add(languageRequest);
+	}
+
+	@PutMapping("/update")
+	public void update(CreateLanguagesRequest languageRequest) throws Exception {
+		this.languageService.update(languageRequest);
 	}
 
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable int id) throws Exception {
-		languageService.delete(id);
-	}
-
-	@PutMapping("/update")
-	public void update(CreateLanguageRequest languageRequest) throws Exception {
-		languageService.update(languageRequest);
+		this.languageService.delete(id);
 	}
 
 	@GetMapping("/{id}")
 	public Language getById(@PathVariable int id) throws Exception {
-		return languageService.getById(id);
+		return this.languageService.getById(id);
 	}
 }
