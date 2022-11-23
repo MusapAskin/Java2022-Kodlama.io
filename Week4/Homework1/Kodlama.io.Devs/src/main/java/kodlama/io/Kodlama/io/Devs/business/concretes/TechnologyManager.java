@@ -9,18 +9,22 @@ import org.springframework.stereotype.Service;
 import kodlama.io.Kodlama.io.Devs.business.abstracts.TechnologyService;
 import kodlama.io.Kodlama.io.Devs.business.requests.CreateTechnologiesRequest;
 import kodlama.io.Kodlama.io.Devs.business.responces.GetAllTechnologiesResponse;
+import kodlama.io.Kodlama.io.Devs.dataAccess.abstracts.LanguageRepository;
 import kodlama.io.Kodlama.io.Devs.dataAccess.abstracts.TechnologyRepository;
 import kodlama.io.Kodlama.io.Devs.entities.concretes.Technology;
 
 @Service
 public class TechnologyManager implements TechnologyService {
 	TechnologyRepository technologyRepository;
+	LanguageRepository languageRepository;
 	List<Technology> technologies;
 
 	@Autowired
-	public TechnologyManager(TechnologyRepository technologyRepository, List<Technology> technologies) {
+	public TechnologyManager(TechnologyRepository technologyRepository, LanguageRepository languageRepository,
+			List<Technology> technologies) {
 		super();
 		this.technologyRepository = technologyRepository;
+		this.languageRepository = languageRepository;
 		this.technologies = technologies;
 	}
 
@@ -44,6 +48,7 @@ public class TechnologyManager implements TechnologyService {
 			isTechnologyExist(technologiesRequest.getName());
 			isTechnologyNameEmpty(technologiesRequest.getName());
 			technology.setName(technologiesRequest.getName());
+			technology.setLanguage(languageRepository.getReferenceById(technologiesRequest.getLanguageId()));
 			this.technologyRepository.save(technology);
 		} catch (Exception e) {
 			throw e;

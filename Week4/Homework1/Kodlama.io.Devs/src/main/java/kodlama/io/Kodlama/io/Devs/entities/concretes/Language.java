@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,5 +30,6 @@ public class Language {
 	@Column(name = "name", unique = true, length = 20)
 	private String name;
 	@OneToMany(mappedBy = "language")
+	@Cascade(CascadeType.ALL)
 	private List<Technology> technologies;
 }

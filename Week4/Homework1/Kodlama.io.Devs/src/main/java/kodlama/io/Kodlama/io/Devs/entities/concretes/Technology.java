@@ -2,6 +2,7 @@ package kodlama.io.Kodlama.io.Devs.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ public class Technology {
 	private int id;
 	@Column(name = "name", unique = true, length = 20)
 	private String name;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "languageId", nullable = false)
 	private Language language;
 }
